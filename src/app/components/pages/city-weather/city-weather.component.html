@@ -1,0 +1,91 @@
+<div *ngIf="!!weather" class="container-fluid main-container d-flex justify-content-center align-items-center">
+    <div class="row">
+        <div class="col responsive-center-container pr-0">
+            <div class="main-box">
+                <div class="row">
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <h1>{{ weather.name }}</h1>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-6 d-flex flex-column justify-content-center align-items-center">
+                        <h4 class="pl-4" >{{ weather.weather[0].main }}</h4>
+                        <p class="pl-4" >{{ weather.weather[0].description }}</p>
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <img [src]="getWeatherIcon()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <h5>Cloudiness</h5>
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <h5>{{ weather.clouds.all }}%</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h1 class="pl-4" >{{ calculateTemp() }} °C</h1>
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <h5 class="mt-4" >Wind speed</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h5 class="pl-3" >{{ calculateMinTemp() }} °C - {{ calculateMaxTemp() }} °C</h5>
+                    </div>
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <h5>{{ getWindSpeed() }} km/h</h5>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col pl-0 responsive-center-container">
+            <div class="secondary-box">
+                <div class="row pt-5">
+                    <div class="col pl-5 d-flex justify-content-center align-items-center">
+                        <h2>Humidity</h2>
+                    </div>
+                    <div class="col">
+                        <h2>{{ weather.main.humidity }}%</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col pl-5 d-flex justify-content-center align-items-center">
+                        <h2>Pressure</h2>
+                    </div>
+                    <div class="col">
+                        <h4 class="mt-2" >{{ weather.main.pressure }} hPa</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col pl-5 d-flex justify-content-center align-items-center">
+                        <h2>Sunrise</h2>
+                    </div>
+                    <div class="col">
+                        <h4 class="mt-2" >{{ getSunrise() }} AM</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col pl-5 d-flex justify-content-center align-items-center">
+                        <h2>Sunset</h2>
+                    </div>
+                    <div class="col">
+                        <h4 class="mt-2" >{{ getSunset() }} PM</h4>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <button (click)="changeCity()" class="btn btn-main">
+                            <h5>Change City</h5>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

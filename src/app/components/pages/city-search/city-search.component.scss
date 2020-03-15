@@ -1,0 +1,48 @@
+.search-container{
+
+    height: 100%;
+
+    
+
+    .search-box {
+
+        width: 350px;
+        height:300px;
+        border-radius: 4px;
+        //background-color: #00E8FF;
+        background-color: rgba(236,110,76,1);
+
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        animation-name: slideAndFade;
+        animation-duration: 2s;
+
+        h3 {
+
+            color: #fff;
+
+            img {
+
+                width: 50px;
+
+            }
+
+        }
+
+    }
+
+}
+
+@keyframes slideAndFade {
+
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0%);
+        opacity: 100%;
+    }
+
+}

@@ -1,0 +1,115 @@
+@keyframes move {
+    from {
+      opacity: 0;
+      transform: translateX(-35%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+
+@mixin transition {
+    @for $i from 1 through 40 {
+      &:nth-child(#{$i}) {
+        animation: move .4s;
+        animation-delay: #{$i * .15}s;
+        animation-fill-mode: backwards;
+      }
+    }
+}
+
+.row {
+
+    @include transition;
+
+    .col {
+
+        @include transition;
+
+    }
+
+}
+
+.main-container {
+
+    height: 100%;
+
+    .main-box {
+
+        background-color: #fff;
+        border-radius: 4px;
+    
+        height: 400px;
+        width: 350px;
+
+        h1 {
+
+            margin-top: 1rem;
+
+        }
+
+        h2 {
+
+            margin-bottom: 0.1rem;
+            margin-top: 1.1rem;
+
+        }
+
+        p {
+
+            font-size: 12px;
+
+        }
+    
+    }
+
+
+    .secondary-box {
+
+        
+
+        background-color: #222831;
+
+        height: 400px;
+        width: 325px;
+
+        border-radius: 0 4px 4px 0;
+
+        h1,h2,h3,h4,h5,h6 {
+
+            color:#FFF;
+
+        }
+
+
+    }
+
+}
+
+.btn-main {
+
+    width: 80%;
+    background-color: rgba(236,110,76,1);
+    color: #fff;
+
+}
+
+@media(max-width:703px){
+
+    .responsive-center-container{
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:nth-child(2){
+
+            padding-left: 25px !important;
+
+        }
+ 
+    }
+
+
+}

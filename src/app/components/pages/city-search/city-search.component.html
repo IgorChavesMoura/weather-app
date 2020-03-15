@@ -1,0 +1,19 @@
+<div class="container-fluid search-container d-flex justify-content-center align-items-center">
+    <div class="row">
+        <div class="col">
+            <div class="search-box search-container d-flex align-items-center">
+                <div class="row">
+                    <div class="col">
+                        <h3>Weatherer <img src="assets/cloudy.svg"> </h3>
+                    </div>
+                </div>
+                <form ngNativeValidate (submit)="searchWeather()" > 
+                    <div class="form-group">
+                        <input required type="text" [(ngModel)]="city" placeholder="Enter your city name" class="form-control" name="search" >
+                    </div>
+                    <button type="submit" class="btn btn-block btn-outline-light">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
