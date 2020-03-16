@@ -28,6 +28,13 @@ export class CityWeatherComponent implements OnInit {
                 console.log(this.weather);
 
               }
+            ).catch(
+              error => {
+
+                alert("City not found!");
+                this.changeCity();
+
+              }
             )
 
         } else {
